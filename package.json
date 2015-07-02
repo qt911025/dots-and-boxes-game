@@ -1,0 +1,53 @@
+{
+  "name": "dots-and-boxes-game",
+  "productName": "DotsAndBoxesGame",
+  "version": "0.0.1",
+  "description": "Dots and Boxes game.",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "qt911025/dots-and-boxes-game",
+  "author": {
+    "name": "QuenTine",
+    "email": "qt911025@qq.com",
+    "url": "quentine.me"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "install": "jspm install",
+    "start": "electron ./",
+    "debug": "electron ./ --debug=3030 --dev --show-devtools",
+    "build": "electron-packager . $npm_package_productName --prune --asar --platform=darwin --arch=x64 --version=0.28.1"
+  },
+  "files": [
+    "index.js",
+    "index.html",
+    "index.css"
+  ],
+  "keywords": [
+    "electron-app"
+  ],
+  "dependencies": {
+    "electron-debug": "^0.1.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^4.1.2",
+    "electron-prebuilt": "^0.28.1",
+    "jspm": "^0.15.7"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "browser"
+    },
+    "dependencies": {
+      "lodash": "npm:lodash@^3.9.3",
+      "pixi.js": "npm:pixi.js@^3.0.6"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}
