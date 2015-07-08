@@ -17,7 +17,7 @@
   "scripts": {
     "install": "jspm install",
     "start": "electron ./",
-    "debug": "electron ./ --debug=3030 --dev --show-devtools",
+    "debug": "electron ./ --debug=5858 --dev --show-devtools",
     "build": "electron-packager . $npm_package_productName --prune --asar --platform=darwin --arch=x64 --version=0.28.1"
   },
   "files": [

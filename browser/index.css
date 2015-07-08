@@ -1,24 +1,68 @@
 html,
-body {
+body{
 	padding: 0;
 	margin: 0;
+  height: 100%;
 }
 
-header {
-	position: absolute;
-	width: 500px;
-	height: 250px;
-	top: 50%;
-	left: 50%;
-	margin-top: -125px;
-	margin-left: -250px;
-	text-align: center;
+p {
+  padding: 0;
+  margin: 0;
 }
 
-header h1 {
-	font-family: 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 60px;
-	font-weight: 100;
-	margin: 0;
-	padding: 0;
+#view {
+  float: left;
+}
+
+#playerList {
+  overflow: hidden;
+  height: inherit;
+  background-color: #EEE;
+}
+
+.player-panel {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #333;
+  padding: 1rem;
+}
+
+@keyframes win {
+  from {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0 0 2px #000;
+  }
+  to {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 0 #000;
+  }
+}
+
+.player-panel.winner:after {
+  content: " is Winner!";
+  animation-name: win;
+  animation-timing-function: linear;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes turn{
+  from {
+    border-left-width: 0;
+    border-left-color: rgba(0, 0, 0, 0);
+    text-indent: 0;
+  }
+  to {
+    border-left-width: 7px;
+    border-left-color: rgba(0, 0, 0, 0.4);
+    text-indent: -7px;
+  }
+}
+
+.player-panel.in-turn {
+  animation-name: turn;
+  animation-timing-function: linear;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  border-left-style: solid;
 }
