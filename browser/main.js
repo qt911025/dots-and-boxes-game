@@ -56,7 +56,7 @@ game.on('init', (colors) => {
     playerInfo.classList.add('player-panel');
     playerInfo.style.backgroundColor = '#'+colors[i].toString(16);
     span = document.createElement('span');
-    span.innerHTML = 'Enter your name';
+    span.innerHTML = i<names.length ? names[i] : 'Enter your name';
     span.addEventListener('click', spanOnClick);
     playerInfo.appendChild(span);
     playerList.appendChild(playerInfo);
@@ -86,6 +86,4 @@ function resetPlayerState() {
 game.on('reset', resetPlayerState);
 
 
-game.init({
-  size: 2
-});
+game.init();

@@ -6,7 +6,7 @@ var ipc = require('ipc');
 
 const defaultOptions = {
 	playerNum: 2,
-	size: 4
+	size: 2
 };
 
 class Game extends EventEmitter{
@@ -126,11 +126,8 @@ class Game extends EventEmitter{
 
 var game = new Game();
 
-ipc.on('resize', (size) => {
-  game.init({
-    playerNum: game.playerNum,
-    size: size
-  });
+ipc.on('init', (options) => {
+  game.init(options);
 });
 
 //reset game without any options
