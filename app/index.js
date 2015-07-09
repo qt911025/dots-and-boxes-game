@@ -17,13 +17,8 @@ function createMainWindow () {
 	});
 
 	win.loadUrl(`file://${__dirname}/../browser/index.html`);
+  win.setMenu(null);
 	win.on('closed', onClosed);
-
-
-  //ipc.on('test', function (event, args) {
-  //  console.log('get message:', args);
-  //});
-
 
   return win;
 }

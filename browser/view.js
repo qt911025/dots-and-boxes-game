@@ -1,5 +1,4 @@
 import PIXI from 'pixi.js';
-var ipc = require('ipc');
 
 const dotSize = 15;
 const boxMultiple = 3;
@@ -121,19 +120,12 @@ function initChessBoard(w, playerNum, selectLine) {
 		boxes[i] = {
 			handleView: (player) => {
 				box.texture = player.texture;
-			}
+			},
+      reset: () => {
+        box.texture = boxTexture;
+      }
 		};
 	}
-
-  function resetView() {
-    lines.forEach((line) => {
-      line.interActive = true;
-      line.texture = lineTexture;
-    });
-    boxes.forEach((box) => {
-      box.texture = boxTexture;
-    });
-  }
 
 	// lines
 	function onMouseOver(mouseData) {
@@ -170,7 +162,11 @@ function initChessBoard(w, playerNum, selectLine) {
 			handleView: (player) => {
 				line.interactive = false;
 				line.texture = player.texture;
-			}
+			},
+      reset: () => {
+        line.interactive = true;
+        line.texture = lineTexture;
+      }
 		};
 
 		line.interactive = true;
@@ -196,6 +192,15 @@ function initChessBoard(w, playerNum, selectLine) {
 		stage.addChild(dot);
 	}
 
+  function resetView() {
+    lines.forEach((line) => {
+      line.reset();
+    });
+    boxes.forEach((box) => {
+      box.reset();
+    });
+  }
+
   initialized = true;
   play();
 
@@ -206,10 +211,6 @@ function initChessBoard(w, playerNum, selectLine) {
     resetView: resetView
 	};
 }
-
-ipc.on('test', (event, arg) => {
-  console.log('test event:', arg);
-});
 
 function destroyChessBoard(){
   pause();

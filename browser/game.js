@@ -41,6 +41,7 @@ class Game extends EventEmitter{
 	}
 
   reset() {
+    this.curPlyrId = 0;
     this.linesleft = this.lines.length;
     this.players.forEach(function(player, id){
       player.score = 0;
@@ -106,9 +107,12 @@ class Game extends EventEmitter{
 			}
 		});
 
-		if(!winThisRound){
+
+		if(winThisRound){
+      _this.emit('updateScore', _this.curPlyrId, _this.players[_this.curPlyrId].score);
+    }else{
 			_this.curPlyrId = (_this.curPlyrId + 1)%_this.players.length;
-      _this.emit('turn', _this.curPlyrId);
+      _this.emit('turn', _this.curPlyrId, _this.players[_this.curPlyrId].score);
 		}
 
 		if(_this.linesleft == 0){
