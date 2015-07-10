@@ -4,8 +4,7 @@
 
 ## Before you use it
 1. Run `$ npm install`
-2. In `browser/config.js`, set configuration `baseUrl` to `__dirname + '/'`
-3. In `browser/jspm_packages/system.src.js`, modify line 1202
+2. In `browser/jspm_packages/system.src.js`, modify line 1202
 
 ```javascript
 // if on the server, remove the "file:" part from the dirname
