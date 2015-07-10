@@ -1,7 +1,6 @@
 'use strict';
 const app = require('app');
 const BrowserWindow = require('browser-window');
-var ipc = require('ipc');
 
 // report crashes to the Electron project
 require('crash-reporter').start();
@@ -11,8 +10,8 @@ require('electron-debug')();
 
 function createMainWindow () {
 	const win = new BrowserWindow({
-		width: 600,
-		height: 400,
+		width: 300,
+		height: 200,
 		resizable: false
 	});
 

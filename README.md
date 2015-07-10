@@ -27,7 +27,7 @@ $ npm start
 ```
 or debug using `$ npm run debug`
 
-### Build
+### Build(Undone)
 
 ```
 $ npm run build

@@ -3,6 +3,9 @@ body{
 	padding: 0;
 	margin: 0;
   height: 100%;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #333;
 }
 
 p {
@@ -21,9 +24,6 @@ p {
 }
 
 .player-panel {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  color: #333;
   padding: 1rem;
 }
 
@@ -65,4 +65,42 @@ p {
   animation-duration: 0.1s;
   animation-fill-mode: forwards;
   border-left-style: solid;
+}
+
+/* settings */
+@keyframes settings-anim {
+  from {
+    height: 0;
+  }
+  to {
+    height: 150px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#settings {
+  animation-name: settings-anim;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  background-color: #00d6b2;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 10px;
+}
+
+/* It doesn't work. */
+/*#settings .hidden {
+  animation-name: settings-anim;
+  animation-duration: 0.1s;
+  animation-direction: reverse;
+  animation-fill-mode: backwards;
+}*/
+
+#settings .form-ctrl {
+  text-align: center;
+  margin: 10px;
 }

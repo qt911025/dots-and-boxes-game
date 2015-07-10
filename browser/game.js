@@ -2,7 +2,6 @@ import _ from 'lodash';
 import { domObj, initChessBoard, destroyChessBoard } from './view';
 
 var EventEmitter = require('events');
-var ipc = require('ipc');
 
 const defaultOptions = {
 	playerNum: 2,
@@ -129,14 +128,5 @@ class Game extends EventEmitter{
 }
 
 var game = new Game();
-
-ipc.on('init', (options) => {
-  game.init(options);
-});
-
-//reset game without any options
-ipc.on('reset', () => {
-  game.reset();
-});
 
 export default game;
