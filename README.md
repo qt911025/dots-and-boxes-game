@@ -27,11 +27,9 @@ $ npm start
 ```
 or debug using `$ npm run debug`
 
-### Build(Undone)
+### Build
 
-```
-$ npm run build
-```
+Please run [electron-packager](https://github.com/maxogden/electron-packager) by yourself.
 
 
 ## License

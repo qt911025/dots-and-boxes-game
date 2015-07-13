@@ -17,8 +17,7 @@
   "scripts": {
     "install": "jspm install",
     "start": "electron ./",
-    "debug": "electron ./ --debug=5858",
-    "build": "electron-packager . $npm_package_productName --prune --asar --platform=darwin --arch=x64 --version=0.28.1"
+    "debug": "electron ./ --debug=5858"
   },
   "files": [
     "index.js",
@@ -33,7 +32,7 @@
   },
   "devDependencies": {
     "electron-packager": "^4.1.2",
-    "electron-prebuilt": "^0.28.1",
+    "electron-prebuilt": "^0.29.2",
     "jspm": "^0.15.7"
   },
   "jspm": {
