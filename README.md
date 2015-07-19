@@ -3,8 +3,9 @@
 > A simple Dots & Boxes game made with [Electron](http://electron.atom.io/), [jspm](http://jspm.io/), [Babel](https://babeljs.io) and [PIXI.js](https://github.com/GoodBoyDigital/pixi.js)
 
 ## Before you use it
-1. Run `$ npm install`
-2. In `browser/jspm_packages/system.src.js`, modify line 1202
+1. Install io.js or Node.js. you should run in `--harmony` mode if you are using Node.js. 
+2. Get into the project dir and run `$ npm install`
+3. In `browser/jspm_packages/system.src.js`, modify line 1202
 
 ```javascript
 // if on the server, remove the "file:" part from the dirname
